@@ -2,55 +2,34 @@
 <html>
   <head>
     <title>Jovian careers</title>
-    <style>
-      h1 {
-        font-size : 40px;
-        font-family : Roboto;
-        font-weight : normal;
-        color : rgb(0, 0, 300); 
-        text-align : center;
-      }
-      h2 {
-        font-size : 25px;
-        font-family : Roboto;
-        font-weight : normal;
-        color : rgb(255 , 0, 0); 
-        text-align : center;
-      }
-      #banner{
-        width: 100%;
-        height: 360px;
-        object-fit: cover;
-      }
-      p{
-        font-family : Roboto;
-        color : rgb(0 , 0, 0);
-      }
-      #container
-        {
-          max-width : 720px;
-          margin : 0 auto 0 auto;
-        }
-      .bodytext
-        {
-          font-family : Roboto;
-          color : rgb(100 , 100 , 100);
-        }
-      
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <style>
+    #banner {
+      height : 360px;
+      width : 100%;
+    }
+ 
+  </style>
   </head>
   <body>
-    <div id="container">
-    <h1>Jovian Careers</h1>
-    <img id="banner"  src = "https://jovian-careers-website-1.subratsharma.repl.co/static/Cheetah.webp" height = "320px">
-    <h2>About Jovian</h2>
-    <p class="bodytext">Jovian is a really good site to learn about programming.</p>
-    <h2>Open Positions</h2>
-    <p class="bodytext">TODO - show the jobs here</p>
-    <div style="text-align:center;">
-    <button>Contact Us</button>
-    </div>
-    <p>Copyright 2023 , Jovian</p>
+    <div class= "container">
+      <h1 class= "text-center mt-3 mt-3">{{company_name}} Careers</h1>
+      <img class ="img-fluid" id ="banner" src = "https://jovian-careers-website-1.subratsharma.repl.co/static/images.jpeg " >
+      <h2 class ="text-center" >About Jovian</h2>
+      <p class ="lead" >Jovian is a really good site to learn about               programming.Site has really good teaching materials for beginners and also provides certification after course completion. People who are interested to learn about coding can definitely use the site for their benefit.</p>
+      <h2 class="text-center">Open Positions</h2>
+      <div >{% for job in jobs%}
+        {% include 'jobitem.html' %}
+        {% endfor %}
+      </p>
+      <p class="text-center">
+      <button class="btn btn-primary btn-lg"  >Contact Us</button>
+      </p >
+    
+    <p class="text-center">Copyright 2023 , Jovian</p>
+      </div>
     </div>
   </body>
 </html>
